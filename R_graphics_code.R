@@ -73,7 +73,7 @@ mp
 # Specify the bounding box of your map with:
 # location <- c(left longitude, bottom latitude, right longitude, upper latitude)
 
-myMap <- get_stamenmap(location<- c(-132,16,-47,56), zoom = 5, maptype="terrain",
+myMap <- get_stamenmap(location<- c(-132,16,-47,56), zoom = 5, maptype="stamen_terrain",
           crop=TRUE) ## smaller zoom values require fewer tiles but show less detail
 
 # view the map you just made
@@ -84,12 +84,12 @@ ggmap(myMap)
 
 ### Watercolor map of Alaska
 
-myMap <- get_stamenmap(location<- c(-179,51,-136,73), zoom = 5, maptype="watercolor",crop=TRUE)
+myMap <- get_stadiamap(location<- c(-179,51,-136,73), zoom = 5, maptype="stamen_watercolor",crop=TRUE)
 ggmap(myMap)
 
 ### Black and white map
 
-myMap <- get_stamenmap(location<- c(-132,16,-47,56), zoom = 4, maptype="toner", crop=FALSE)
+myMap <- get_stadiamap(location<- c(-132,16,-47,56), zoom = 4, maptype="stamen_toner", crop=FALSE)
 ggmap(myMap)
 
 ### And all maps can be made into black-and-white maps by specifying color = "bw"
@@ -97,7 +97,7 @@ ggmap(myMap)
 ## Lets move forward with a black and white terrain map, and lets zoom in on western Washington:
 ## Play around with the zoom levels to get your desired level of detail
 
-myMap <- get_stamenmap(location<- c(-126,45,-120,50), zoom = 7,
+myMap <- get_stadiamap(location<- c(-126,45,-120,50), zoom = 7,
          maptype="terrain-background",color = "bw", crop=TRUE)
 
 ggmap(myMap)
